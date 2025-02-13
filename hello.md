@@ -39,3 +39,26 @@ git commit -m "feat: 20250212 hello.md uploaded"
 git push
 
 를 순서대로 복사 붙여넣기 하시면 됩니다.
+
+
+20250213
+
+가장 상위 폴더 우클릭 -> new -> python package
+-> chapter09_classes
+-> chapter10_coffee_machine_pop
+
+chapter10_coffee_machine_pop -> new -> python package
+-> pop_version -> 우클릭 -> new -> python file
+-> main
+
+# 방학특강 # 2 python # 2
+
+강사 이름 : 안근수
+전공 여부 : 비전공자
+원래 전공 : 영어교육과
+현재 수업 : python / java / web
+web3 -> HTML / CSS / Javascript / React
+이후 수업 : 국비
+수업 코드 : www.github.com/maybeags/python_study_hard
+
+
