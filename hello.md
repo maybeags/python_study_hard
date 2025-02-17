@@ -62,3 +62,6 @@ web3 -> HTML / CSS / Javascript / React
 수업 코드 : www.github.com/maybeags/python_study_hard
 
 
+git add .
+git commit -m "feat: 20250214 constructor / destructor lesson"
+git push+
