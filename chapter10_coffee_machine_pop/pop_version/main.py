@@ -55,3 +55,10 @@ resources = {
 # profit += MENU["에스프레소"]["가격"] * 2
 #
 # print(profit)
+
+choice = input("어떤 음료를 드시겠습니까? 에스프레소/라떼/카푸치노 >>>")
+#off 라고 입력되면 종료될 것
+#report라고 입력되면 resources와 profit을 참조하여 manual과 같은
+#방식으로 콘솔에 출력될 것
+#잘못입력했을 경우 잘못 입력하셨습니다라는 안내문이 출력될 것
+
