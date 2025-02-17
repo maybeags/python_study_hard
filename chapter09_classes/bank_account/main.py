@@ -76,9 +76,39 @@ class BankAccount:
         print()
 
     # deposit(), withdraw() -> call1~4중에서 뭘로 작성해야할지. -> 내부 로직이 안내돼있는데 어떻게 할지 += / -=
+    def deposit(self, money):
+        if money <= 0:
+            print(f"{money}원은 입금할 수 없는 금액입니다.")
+            return             # money 0원 이하라면 메서드 종료
+        self.balance += money
+        print(f"{money}원이 입금되었습니다. 현재 잔액 : {self.balance}")
+
+    def withdraw(self, money):
+        if money <= 0:          # 지시사항에 없었는데 생각해보니 이상해서 추가한겁니다.
+            print(f"{money}원은 출금할 수 없는 금액입니다.")
+            return
+        if self.balance - money < 0:
+            print("잔액이 부족하려 출금할 수 없습니다.")
+            return
+        self.balance -= money
+        print(f"{money}원이 출금되었습니다. 현재 잔액 : {self.balance}")
 
 account1 = BankAccount("홍길동", "123-456-789", 100000)
 account2 = BankAccount("신사임당", "987-654-321", 500000)
 
+account1.print_account_info()
+account2.print_account_info()
+
+account1.deposit(50000)
+# 입금 실패 테스트 코드
+# account1.deposit(-50000)
+# 출금 실패 테스트 코드
+# account1.withdraw(-1000)
+account1.withdraw(200000)
+account1.withdraw(100000)
+
+account2.withdraw(100000)
+account2.deposit(200000)
+print()         # 개행하는 명령어
 account1.print_account_info()
 account2.print_account_info()
