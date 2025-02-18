@@ -65,3 +65,15 @@ web3 -> HTML / CSS / Javascript / React
 git add .
 git commit -m "feat: 20250214 constructor / destructor lesson"
 git push+
+
+20250218 coffee machine pop version complete
+
+-> 여러분들이 내일 준비할 것은
+menu, coffee_maker, money_machine 세 개의 파이썬 모듈(파일)
+확인하시고 어떻게 잘 조립해서
+
+main에 작성하면 커피머신이 완성될지 고민해보도록 하겠습니다.
+
+git add .
+git commit -m "feat: 20250218 coffee maker oop started"
+git push
