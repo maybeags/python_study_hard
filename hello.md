@@ -77,3 +77,7 @@ main에 작성하면 커피머신이 완성될지 고민해보도록 하겠습�
 git add .
 git commit -m "feat: 20250218 coffee maker oop started"
 git push
+
+git add .
+git commit -m "feat: 20250219 class and static methods"
+git push
