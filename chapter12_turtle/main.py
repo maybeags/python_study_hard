@@ -77,7 +77,23 @@ def dotted_line():
 #     dotted_line()
 #     t.left(72)
 
+# 1. draw_figures(num)을 정의하시오.
+# 2. num이 3 미만이라면 "도형을 그릴 수 없습니다"가 출력되고 메서드를 종료하시오.
+# 3. 3이상이라면 해당 메서드가 실행될 수 있도록 하시고,
+# 4. 반복문을 통해 draw_figures를 호출해 삼각형부터 십각형까지 그리는데,
+# 5. 도형마다 색깔이 다를 수 있도록 작성하시오.
+
 def draw_figures(num):
+    t.color(random.choice(colors))
+    if num < 3:
+        print("도형을 그릴 수 없습니다.")
+        return         # 함수에서 return 다음 아무것도 입력하지 않으면 함수 종료
+    for _ in range(num):
+        t.forward(100)
+        t.left(360 / num)
+
+
+def draw_dotted_figures(num):
     for _ in range(num):
         dotted_line()
         t.left(360 / num)
@@ -113,10 +129,61 @@ colors = [
 ]
 
 t.speed(10)
-for i in range(3, 11, 1):
-    t.color(random.choice(colors))
-    draw_figures(i)
+# for i in range(3, 11, 1):
+#     t.color(random.choice(colors))
+#     draw_dotted_figures(i)
 
+# draw_figures(3)
+# draw_figures(4)
+# draw_figures(1)
+
+# for i in range(11):
+    # draw_figures(i)
+'''
+    .heading() 메서드 :
+        거북이가 바라보는 방향을 나타내는 속성으로 도(degree) 단위로 나타남.
+        
+        해당 메서드는 콘솔창에 float 형태로 출력됩니다.
+        0도 : 동
+        90도 : 북
+        180도 : 서
+        270도 : 남
+        
+    .setheading() 메서드 :
+        특정 각도로 거북이를 회전시키는 메서드
+        
+    .circle() 메서드 :
+        거북이가 원 그리는 메서드
+'''
+# t.forward(100)
+# print(t.heading())
+# t.right(90)
+# print(t.heading() * 100)
+
+
+# t.circle(100)
+# t.color(random.choice(colors))
+# t.setheading(t.heading() + 10)
+# t.circle(100)
+# t.color(random.choice(colors))
+# t.setheading(t.heading() + 10)
+# t.circle(100)
+
+# for _ in range(360 // 100):
+#     t.circle(100)
+#     t.color(random.choice(colors))
+#     t.setheading(t.heading() + 100)
+
+# 이상의 네 줄의 코드를 응용하여 draw_spriograph(size_of_gap)로 함수화 하시오.
+
+def draw_spriograph(size_of_gap):
+    for _ in range(360 // size_of_gap):
+        t.circle(100)
+        t.color(random.choice(colors))
+        t.setheading(t.heading() + size_of_gap)
+
+t.speed(0)
+draw_spriograph(2)
 
 
 
