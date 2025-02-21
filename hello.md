@@ -85,3 +85,7 @@ git push
 git add .
 git commit -m "feat: 20250220 turtle started"
 git push
+
+git add .
+git commit -m "feat: 20250221 pretty table study"
+git push

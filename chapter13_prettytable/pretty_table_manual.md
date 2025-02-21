@@ -23,7 +23,7 @@ table.field_names = ["필드1", "필드2", "필드3"]
 
 ```python
 
-table.add_row(["값1", "값2", "값3"])
+table.add_row(("값1", "값2", "값3"))
 ```
 
 **설명:**
