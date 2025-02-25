@@ -297,23 +297,141 @@ ScoreOutOfRangeError 클래스를 정의해서 사용하겠습니다.
 5. 예외가 발생하지 앟는 경우 '정상적으로 처리되었습니다.'라는 메시지를 출력하고, 결과도 출력한다.
 6. 프로그램 종료 메시지를 출력한다.
 '''
-try:
-    num = int(input("숫자를 입력하세요 >>> "))
-    result = 100 / num
+# try:
+#     num = int(input("숫자를 입력하세요 >>> "))
+#     result = 100 / num
+# except ZeroDivisionError as e:
+#     print("0으로 나눌 수 없습니다.")
+#     print(e)
+# except ValueError as e:
+#     print("숫자만 입력할 수 있습니다.")
+#     print(e)
+# except Exception as e:
+#     print(e)
+# else :
+#     print("정상적으로 처리되었습니다.")
+# #     print(f"100 / {num} = {100/num}")     # else로 넘어와서 0으로 연산을 하려고 하면 예외 발생함.
+#     print(f"100 / {num} = {result}")        # 이상을 이유로 result라는 중간단계를 거쳐서 작성함.
+# finally:
+#     print("프로그램이 종료되었습니다.")
 
-except ZeroDivisionError as e:
-    print("0으로 나눌 수 없습니다.")
-    print(e)
+'''
+사용자로부터 리스트의 인덱스를 입력 받아 해당 인덱스의 값을 출력하는 프로그램을 작성하시오.
+만약 잘못된 인덱스를 입력하면 적절한 예외 메시지를 출력하시오.
 
-except ValueError as e:
-    print("숫자만 입력할 수 있습니다.")
-    print(e)
-except Exception as e:
-    print(e)
+지시 사항
+1. 미리 정의된 리스트가 있다.
+2. 사용자로부터 리스트의 인덱스를 입력 받는다.
+3. 입력받은 인덱스를 사용하여 리스트의 값을 출력한다.
+4. 인덱스가 리스트의 범위를 벗어나면 적절한 메시지를 출력한다.
+5. 사람을 의심하고 예상되는 예외를 적용한다.
+6. 예외가 발생하지 않는 경우 "정상적으로 처리되었습니다"라는 메시지와 함께 해당 인덱스의 값을 출력한다.
+7. 프로그램 종료 메시지를 출력한다.
+8. 마이너스인덱스는 적용시키지 않는다. -> 사용자 정의 예외 클래스를 통해서 적용합니다.
+    -> NegaviceNumIndexError라고 이름 짓고 처리하겠습니다.
+'''
+# 예외 목록 : IndexError / ValueError / TypeError / NegativeNumIndexError / Exception
+# 사용자 정의 예외 클래스 정의
+# class NegativeNumIndexError(Exception):
+#     pass
+#
+# my_list = [10, 20, 30, 40, 50]
+#
+# try :
+#     index_num = input("인덱스 넘버를 입력하세요 >>> ")
+#     index_num = int(index_num)
+#     if index_num < 0:
+#         raise NegativeNumIndexError("마이너스 인덱스는 적용하지 않습니다.")
+#     chosen_element = my_list[index_num]
+# except NegativeNumIndexError as e:
+#     print(e)
+# except ValueError as e:
+#     print("정수만 입력할 수 있습니다.")
+#     print(e)
+# except IndexError as e:
+#     print("list의 범위를 벗어났습니다.")
+#     print(e)
+# except TypeError as e:
+#     print("자료형이 잘못 입력되었습니다.")
+#     print(e)
+# except Exception as e:
+#     print("예측할 수 없는 예외가 발생했습니다.")
+#     print(e)
+# else:
+#     print(f"{index_num} 위치에 있는 값은 {chosen_element}입니다.")
+# finally:
+#     print("프로그램이 종료되었습니다.")
 
-else :
-    print("정상적으로 처리되었습니다.")
-#     print(f"100 / {num} = {100/num}")     # else로 넘어와서 0으로 연산을 하려고 하면 예외 발생함.
-    print(f"100 / {num} = {result}")        # 이상을 이유로 result라는 중간단계를 거쳐서 작성함.
-finally:
-    print("프로그램이 종료되었습니다.")
+'''
+사용자로부터 속성명을 입력 받아 객체의 해당 속성을 출력하는 프로그램을 작성하시오.
+만약 사용자가 잘못된 속성을 입력하면 적절한 예외 처리 메시지를 출력하시오.
+
+지시 사항
+1. 미리 정의된 클래스와 객체가 있다.
+2. 사용자로부터 속성명을 입력받는다.
+3. 입력받은 '속성명'을 사용하여 객체의 '속성값'을 출력한다.
+4. 잘못된 속성명을 입력하면 '존재하지 않는 속성입니다.'라는 메시지를 출력한다.
+5. 예외가 발생하지 않은 경우 '정상적으로 처리되었습니다'라는 메시지와 속성값을 출력한다.
+6. 프로그램 종료 메시지를 출력한다.
+'''
+# 클래스 정의
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+#객체 생성
+
+person1 = Person(name="John", age=30)       # keyword argument로 객체 생성
+# 풀이법 # 1
+
+# try:
+#     attribute1 = input("출력할 속성명을 입력하세요. >>> ")
+# except AttributeError as e:
+#     print("존재하지 않는 속성명입니다.")
+#     print(e)
+# except Exception as e:
+#     print("예측할 수 없는 예외가 발생했습니다.")
+#     print(e)
+# else:
+#     print("정상적으로 처리되었습니다.")
+#     print(getattr(person1, attribute1))
+# finally:
+#     print("프로그램이 종료되었습니다.")
+
+'''
+getattr(객체명, 속성명->대입된 애가 들어가야함) 함수
+이상의 코드를 예시로 생각했을 때,
+Person 클래스 내부에 있는 인스턴스 변수명을 그대로 집어넣는 것은 불가능하고,
+input을 통해서 받은 str 데이터를 대입했을 때 가능
+
+vars(객체명) : 객체의 속성명 - 값을 dictionary의 키 - 값 쌍으로 만들어주는 함수
+
+'''
+# 객체를 dictionary로 변환
+# profile = vars(person1)
+# try:
+#     attribute2 = input("출력할 속성명을 입력하세요 >>> ")
+#     # for key in profile:         # 딕셔너리에서 반복문 돌리면 key만 튀어나옵니다.
+#     #     print(key)              # value를 조회하기 위해서는 추가적으로 작성해야만 했습니다
+#     #     print(profile[key])
+#     if attribute2 in profile:    # profile의 key 중에 attribute2와 일치하는 것이 있는 묻는 조건문
+#         print("정상 출력이 가능합니다.")
+#     else:
+#         raise KeyError
+# except KeyError as e:
+#     print(e)
+#     print("존재하지 않는 속성입니다.")
+# except Exception as e:
+#     print(e)
+#     print("예측할 수 없는 예외가 발생했습니다.")
+# else:
+#     print(f"{attribute2}의 속성값은 : {profile[attribute2]}입니다.")
+# finally:
+#     print("프로그램이 종료되었습니다.")
+'''
+chapter15_inheritance 패키지 생성 main
+
+'''
+
+

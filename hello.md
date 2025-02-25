@@ -89,3 +89,11 @@ git push
 git add .
 git commit -m "feat: 20250221 pretty table study"
 git push
+
+git add .
+git commit -m "feat: 20250224 exception lesson"
+git push
+
+git add .
+git commit -m "feat: 20250225 inheritance lesson"
+git push
