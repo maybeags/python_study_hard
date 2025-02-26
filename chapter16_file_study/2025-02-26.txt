@@ -1,0 +1,4 @@
+09:30 python lesson
+15:30 java lesson
+19:00 web react lesson
+22:30 English lesson

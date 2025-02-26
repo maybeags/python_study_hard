@@ -74,3 +74,74 @@ import fileinput        # 모듈 도입
 
     3. 파일의 생성
 '''
+# file = open("myFile.txt", "wt")
+# print("myFile.txt 파일이 생성되었습니다.")
+#
+# file.close()        # open() 때는 파일이 생성되지 않았기 때문에 함수로 호출하지만 닫는 것은
+                    # 특정한 파일을 닫는 것이기 때문에 method라는 차이가 있습니다.
+
+'''
+
+    4. with 문
+        close() 메서드를 자동으로 호출할 수 있도록 하는 명령어
+        
+    형식 :
+with open(파일명, 모드) as 파일객체:
+    파일 처리 코드
+'''
+# with open("myFile2.txt", "wt") as file:
+#     print("myFile2.txt 파일이 생성되었습니다.")
+'''
+2. 파일 출력
+    1) 텍스트 파일 생성하고 작성하기
+'''
+# file = open("hello.txt", "wt")
+#
+# file.write("hi")
+# file.close()
+
+'''
+    2) 텍스트 파일에 내용 추가하기
+'''
+# file = open("hello.txt", "at")
+# file.write("\nIt's windy and cold today.")
+# file.close()
+
+'''
+기본 예제
+
+오늘의 스케줄을 입력하면 그 내용을 모두 파일에 보관하는 프로그램을 작성할 예정입니다.
+스케줄을 입력하지 않고 enter를 누르면 프로그램을 종료합니다.
+생성되는 파일의 이름은 현재 날짜이고, 확장자는 txt입니다.
+"2020-10-22.txt"와 같은 형식을 갖추고 있습니다.
+'''
+# import time     # time 모듈을 가져옴.
+#
+# file = open(time.strftime("%Y-%m-%d")+".txt", "at")
+# end_of_schedule = False
+# while not end_of_schedule:
+#     schedule = input("오늘의 스케줄을 입력하세요 >>> ")
+#     if schedule:        # schedule에 값이 뭐라도 있으면 true에 해당함.
+#         file.write(schedule + "\n")
+#     else:               # schedule에 아무런 값이 없을 경우 이하의 코드 실행됨
+#         end_of_schedule = True
+#         # break # 이건 바로 반복문 종료됨.
+#         print("종료되었습니다.")
+# print("오늘의 날짜에 스케줄을 추가했습니다.")
+# file.close()
+'''
+빈 값(null / None)의 경우 기본적으로 조건식에서 False로 판명됨.
+
+3. 파일 입력(input)
+    1) 텍스트 파일 읽기
+        1)-1. read() 메서드
+        형식 :
+            file.read(size)
+'''
+# file = open("2025-02-26.txt", "rt")
+#
+# schedules = file.read() # size를 명시하지 않으면 전부 다 가지고 옵니다.
+#
+# print(schedules)
+#
+# file.close()
