@@ -141,3 +141,10 @@ car.add_oil(100)
 car.charge(50)
 car.hybrid_info()       # 현재 주유 상태 : 50
                         # 현재 충전 상태 : 30
+'''
+이름 바꿀 패키지 선택 우클릭 -> rename / refactor -> rename
+
+chapter15_inheritance
+
+chapter16_file_study -> main
+'''
