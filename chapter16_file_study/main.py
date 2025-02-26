@@ -142,6 +142,100 @@ with open(파일명, 모드) as 파일객체:
 #
 # schedules = file.read() # size를 명시하지 않으면 전부 다 가지고 옵니다.
 #
-# print(schedules)
+# print(schedules, end="")
 #
 # file.close()
+'''
+파일과 동일한 모습으로 출력하기 위해서 print() 함수의 자동 줄바꿈 방지를 위한 end=""
+속성을 추가.
+read() 메서드를 통해 전체를 읽으려면 메모리 공간이 많이 필요합니다. 읽어야 할 파일이 크다면
+일부만 읽어들이는 작업을 반복하는 반복문을 통해 파일 전체를 읽도록 구현하는 편이 좋습니다.
+'''
+# file = open("2025-02-26.txt", "rt")
+# end_of_text = False
+# while not end_of_text:
+#     str = file.read(30)      # size = 1 로 1 바이트씩 읽어옴.
+#     if not str:              # str = None이라면 이라고 해석됨
+#         break
+#     print(str, end="😀")
+#
+# file.close()
+'''
+이상의 코드는 30 바이트씩 가지고 오게 되는데, 첫 번째 30바이트의 결과값 이후에 자동으로 개행이
+일어납니다(print() 함수의 기본 기능 때문에). 그래서 이 부분을 파일과 콘솔에 정보가 동일하도록
+end=""를 적용한 사례입니다.
+
+
+    2) readline() 메서드
+        텍스트 파일을 한 줄씩 읽어서 처리하는 메서드
+        만약 파일이 종료되어 더 읽어들일 데이터가 없다면 빈 문자열("")을 읽어들입니다.
+        반복문을 이용해서 여러 번 읽어들여야 할 때 (한 줄씩) 파일 전체를 읽을 수 있습니다.
+'''
+# file = open("2025-02-26.txt", "rt")
+# str = file.readline()
+# print(str)
+#
+# file.close()
+
+# file = open("2025-02-26.txt", "rt")
+# end_of_text = False
+# while not end_of_text:
+#     str = file.readline()
+#     if not str:
+#         end_of_text = True
+#     print(str, end="")
+#
+# file.close()
+'''
+        3) readlines() 메서드
+            전체 라인을 읽어들여서 각 라인 단위로(개행 단위로) '리스트'에 저장하는 메서드
+'''
+# with open("2025-02-26.txt", "rt") as file:
+#     lines = file.readlines()
+#     # print(lines)
+#     # print(lines[0], end="")
+#     # print(lines[1], end="")
+#     # print(lines[2], end="")
+#     # print(lines[3], end="")
+#     for line in lines:
+#         print(line, end="")
+
+'''
+나라별 수도를 순차적으로 반복시켜 nation 리스트에 사전에 미리 저장해두었습니다.
+
+nation 리스트의 내용을 이해하여 다음과 같은 nation.txt 파일을 '생성'하세요.
+
+실행 예
+
+생성된 nation.txt 파일의 내용은 다음과 같습니다.
+
+Greece - Athene
+Germany - Berlin
+South Korea - Seoul
+USA - Washington D.C
+'''
+nation = ["Greece", "Athene", "Germany", "Berlin", "South Korea", "Seoul", "USA", "Washington D.C"]
+
+# 막 쓴 버전
+# file = open("nation.txt", "wt")
+# file.write(nation[0] + " - " + nation[1] + "\n")
+# file.write(nation[2] + " - " + nation[3] + "\n")
+# file.write(nation[4] + " - " + nation[5] + "\n")
+# file.write(nation[6] + " - " + nation[7] + "\n")
+#
+# file.close()
+
+# 좀 반복문을 적용해서 사용한다면
+with open("nation2.txt", "wt") as file:
+    # list 짝수 번지 -> 국가 / 홀수 번지 -> 도시
+    for i in range(0, len(nation), 2):
+        file.write(nation[i] + " - " + nation[i+1] + "\n")
+
+'''
+chapter17_crawling
+
+main
+
+'''
+
+

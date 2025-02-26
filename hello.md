@@ -97,3 +97,9 @@ git push
 git add .
 git commit -m "feat: 20250225 inheritance lesson"
 git push
+
+# 마크다운으로는 \#을 쓰지만 마크업 언어로는 <h1>이라고 표현</h1>
+
+git add .
+git commit -m "feat: 20250226 python lesson finished"
+git push
